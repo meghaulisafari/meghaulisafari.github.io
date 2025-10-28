@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Meghauli Safari - Experience Chitwan National Park | Wildlife Safari & Riverside Retreat</title>
+    <meta name="description" content="Discover Hotel Meghauli Safari by the Rapti River in Chitwan, Nepal. Experience rhino sightings, bird watching, and unforgettable jungle safaris at Chitwan National Park. Book your wildlife adventure today.">
+    <meta name="keywords" content="Hotel Meghauli Safari, Chitwan National Park, Rapti River, rhino safari, bird watching, wildlife hotel Nepal, Meghauli accommodation, jungle safari Chitwan">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://meghaulisafari.com/">
+    <meta property="og:title" content="Hotel Meghauli Safari - Wildlife Adventure by Rapti River">
+    <meta property="og:description" content="Experience the wild beauty of Chitwan National Park. Luxury riverside accommodation with rhino safaris and bird watching.">
+    <meta property="og:image" content="https://meghaulisafari.com/assets/images/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://meghaulisafari.com/">
+    <meta property="twitter:title" content="Hotel Meghauli Safari - Wildlife Adventure by Rapti River">
+    <meta property="twitter:description" content="Experience the wild beauty of Chitwan National Park. Luxury riverside accommodation with rhino safaris and bird watching.">
+    <meta property="twitter:image" content="https://meghaulisafari.com/assets/images/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🦏</text></svg>">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2C5F2D',
+                        secondary: '#97BC62',
+                        accent: '#D4A574',
+                        dark: '#1A1A1A',
+                        light: '#F8F7F4'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                        display: ['Georgia', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Flatpickr for date picker -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Hotel",
+        "name": "Hotel Meghauli Safari",
+        "description": "Riverside hotel in Meghauli, Chitwan offering wildlife safari experiences, bird watching, and luxury accommodation near Chitwan National Park.",
+        "image": "https://meghaulisafari.com/images/hotel-exterior.jpg",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Andrauli, Meghauli",
+            "addressLocality": "Chitwan",
+            "addressRegion": "Bagmati",
+            "addressCountry": "NP"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "27.5779",
+            "longitude": "84.2316"
+        },
+        "url": "https://meghaulisafari.com",
+        "telephone": "+977-9855014882",
+        "email": "meghaulisafari@gmail.com",
+        "priceRange": "$$",
+        "starRating": {
+            "@type": "Rating",
+            "ratingValue": "4"
+        },
+        "amenityFeature": [
+            {"@type": "LocationFeatureSpecification", "name": "Free WiFi"},
+            {"@type": "LocationFeatureSpecification", "name": "Free Parking"},
+            {"@type": "LocationFeatureSpecification", "name": "Restaurant"},
+            {"@type": "LocationFeatureSpecification", "name": "Safari Tours"},
+            {"@type": "LocationFeatureSpecification", "name": "Bird Watching"},
+            {"@type": "LocationFeatureSpecification", "name": "Riverside Location"}
+        ],
+        "checkinTime": "14:00",
+        "checkoutTime": "11:00",
+        "potentialAction": {
+            "@type": "ReserveAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://meghaulisafari.com/#booking"
+            }
+        }
+    }
+    </script>
+
+    <style>
+        /* Custom animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in-up {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        /* Smooth transitions */
+        * {
+            transition: color 0.2s ease, background-color 0.2s ease;
+        }
+
+        /* Hero background overlay */
+        .hero-overlay {
+            background: linear-gradient(135deg, rgba(44, 95, 45, 0.8) 0%, rgba(44, 95, 45, 0.6) 100%);
+        }
+
+        /* Card hover effect */
+        .card-hover {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card-hover:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Lazy load images */
+        img[loading="lazy"] {
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        img[loading="lazy"].loaded {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="font-sans antialiased bg-light text-dark">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full bg-white/95 backdrop-blur-sm shadow-md z-50" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="#home" class="flex items-center space-x-3 group">
+                    <span class="text-4xl">🦏</span>
+                    <div>
+                        <h1 class="text-2xl font-bold text-primary group-hover:text-secondary transition-colors">Hotel Meghauli Safari</h1>
+                        <p class="text-xs text-gray-600">Where wilderness meets comfort</p>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation -->
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-dark hover:text-primary font-medium transition-colors">Home</a>
+                    <a href="#rooms" class="text-dark hover:text-primary font-medium transition-colors">Rooms</a>
+                    <a href="#amenities" class="text-dark hover:text-primary font-medium transition-colors">Amenities</a>
+                    <a href="#gallery" class="text-dark hover:text-primary font-medium transition-colors">Gallery</a>
+                    <a href="#location" class="text-dark hover:text-primary font-medium transition-colors">Location</a>
+                    <a href="#contact" class="text-dark hover:text-primary font-medium transition-colors">Contact</a>
+                    <a href="#booking" class="bg-primary hover:bg-secondary text-white px-6 py-2.5 rounded-full font-semibold transition-all hover:shadow-lg">Book Now</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-dark focus:outline-none" aria-label="Toggle menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t">
+            <div class="px-4 pt-2 pb-4 space-y-2">
+                <a href="#home" class="block py-2 text-dark hover:text-primary font-medium">Home</a>
+                <a href="#rooms" class="block py-2 text-dark hover:text-primary font-medium">Rooms</a>
+                <a href="#amenities" class="block py-2 text-dark hover:text-primary font-medium">Amenities</a>
+                <a href="#gallery" class="block py-2 text-dark hover:text-primary font-medium">Gallery</a>
+                <a href="#location" class="block py-2 text-dark hover:text-primary font-medium">Location</a>
+                <a href="#contact" class="block py-2 text-dark hover:text-primary font-medium">Contact</a>
+                <a href="#booking" class="block py-2 bg-primary text-white text-center rounded-full font-semibold mt-2">Book Now</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative h-screen flex items-center justify-center overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0">
+            <img src="https://media.istockphoto.com/id/612640066/photo/greater-one-horned-rhinoceros-in-bardia-national-park-nepal.jpg?s=612x612&w=0&k=20&c=KVE9teK1g8CSxgyrFKT_b3WZX9ZWYd-matt2Yfi2UQ4="
+                 alt="Chitwan National Park Wildlife"
+                 class="w-full h-full object-cover"
+                 loading="eager">
+            <div class="absolute inset-0 hero-overlay"></div>
+        </div>
+
+        <!-- Hero Content -->
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto animate-fade-in-up">
+            <h2 class="text-5xl md:text-7xl font-bold font-display mb-6">
+                Where Wilderness Meets Comfort
+            </h2>
+            <p class="text-xl md:text-2xl mb-8 text-gray-100">
+                Experience the magic of Chitwan National Park from our riverside sanctuary
+            </p>
+            <p class="text-lg md:text-xl mb-10 text-gray-200 max-w-2xl mx-auto">
+                Nestled by the serene Rapti River, witness one-horned rhinos, exotic birds, and unforgettable jungle adventures
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#booking" class="bg-accent hover:bg-accent/90 text-white px-8 py-4 rounded-full text-lg font-semibold transition-all hover:shadow-2xl inline-block">
+                    Reserve Your Adventure
+                </a>
+                <a href="#rooms" class="bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white px-8 py-4 rounded-full text-lg font-semibold border-2 border-white transition-all inline-block">
+                    Explore Rooms
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h2 class="text-4xl md:text-5xl font-bold text-primary mb-6 font-display">Your Gateway to Wild Nepal</h2>
+                    <div class="space-y-4 text-gray-700 text-lg">
+                        <p>
+                            Hotel Meghauli Safari is more than just a place to stay—it's your basecamp for exploring the incredible biodiversity of Chitwan National Park, a UNESCO World Heritage Site. Located on the tranquil banks of the Rapti River in Meghauli, we offer the perfect blend of comfort and adventure.
+                        </p>
+                        <p>
+                            Wake up to the calls of exotic birds, embark on thrilling rhino safaris through ancient forests, and witness the majesty of Bengal tigers, gharial crocodiles, and over 500 species of birds. Our experienced guides ensure safe, educational, and unforgettable encounters with nature.
+                        </p>
+                        <p>
+                            After your adventures, retreat to our comfortable rooms with modern amenities, savor authentic Nepali cuisine at our riverside restaurant, and share stories around the evening bonfire. Whether you're a wildlife photographer, nature enthusiast, or seeking a peaceful escape, Hotel Meghauli Safari is your perfect sanctuary.
+                        </p>
+                    </div>
+                </div>
+                <div class="relative">
+                    <img src="images/rhino1.jpg"
+                         alt="Rapti River view from hotel"
+                         class="rounded-2xl shadow-2xl"
+                         loading="lazy">
+                    <div class="absolute -bottom-6 -right-6 bg-secondary text-white p-6 rounded-xl shadow-xl">
+                        <p class="text-4xl font-bold">500+</p>
+                        <p class="text-sm">Bird Species</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features/Highlights -->
+    <section class="py-20 bg-primary/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4 font-display">Why Choose Meghauli Safari</h2>
+                <p class="text-xl text-gray-600">Experience the best of Chitwan's wilderness</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                    <div class="text-5xl mb-4">🦏</div>
+                    <h3 class="text-2xl font-bold text-primary mb-3">Rhino Safaris</h3>
+                    <p class="text-gray-600">Get up close with the endangered one-horned rhinoceros in their natural habitat with expert guides.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                    <div class="text-5xl mb-4">🦅</div>
+                    <h3 class="text-2xl font-bold text-primary mb-3">Bird Watching</h3>
+                    <p class="text-gray-600">Discover over 500 bird species including rare migratory birds along the Rapti River corridor.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                    <div class="text-5xl mb-4">🌊</div>
+                    <h3 class="text-2xl font-bold text-primary mb-3">Riverside Serenity</h3>
+                    <p class="text-gray-600">Relax by the pristine Rapti River with stunning views and peaceful natural surroundings.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                    <div class="text-5xl mb-4">🏞️</div>
+                    <h3 class="text-2xl font-bold text-primary mb-3">Jungle Treks</h3>
+                    <p class="text-gray-600">Explore dense forests and grasslands on guided walks through UNESCO-protected wilderness.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                    <div class="text-5xl mb-4">🎭</div>
+                    <h3 class="text-2xl font-bold text-primary mb-3">Cultural Experiences</h3>
+                    <p class="text-gray-600">Immerse yourself in Tharu culture with traditional dances and village tours.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="bg-white rounded-2xl p-8 shadow-lg card-hover text-center">
+                    <div class="text-5xl mb-4">🍽️</div>
+                    <h3 class="text-2xl font-bold text-primary mb-3">Local Cuisine</h3>
+                    <p class="text-gray-600">Savor authentic Nepali dishes and international favorites at our riverside restaurant.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rooms Section -->
+    <section id="rooms" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4 font-display">Comfortable Accommodations</h2>
+                <p class="text-xl text-gray-600">Choose your perfect retreat after adventure-filled days</p>
+            </div>
+
+            <div class="flex justify-center">
+                <!-- AC Comfort Room -->
+                <div class="bg-white rounded-2xl overflow-hidden shadow-xl card-hover border-2 border-accent relative max-w-lg w-full">
+                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?q=80&w=800"
+                         alt="AC Comfort Room"
+                         class="w-full h-80 object-cover"
+                         loading="lazy">
+                    <div class="p-8">
+                        <h3 class="text-3xl font-bold text-primary mb-3">AC Comfort Room</h3>
+                        <p class="text-4xl font-bold text-accent mb-6">Contact for Rates</p>
+                        <p class="text-gray-600 mb-6 text-lg">Cozy and comfortable air-conditioned rooms perfect for couples or solo travelers seeking a peaceful retreat by the Rapti River.</p>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center text-gray-700 text-lg">
+                                <svg class="w-6 h-6 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Air Conditioning
+                            </li>
+                            <li class="flex items-center text-gray-700 text-lg">
+                                <svg class="w-6 h-6 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Free WiFi
+                            </li>
+                            <li class="flex items-center text-gray-700 text-lg">
+                                <svg class="w-6 h-6 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Hot Shower
+                            </li>
+                            <li class="flex items-center text-gray-700 text-lg">
+                                <svg class="w-6 h-6 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Complimentary Breakfast
+                            </li>
+                            <li class="flex items-center text-gray-700 text-lg">
+                                <svg class="w-6 h-6 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Comfortable Bedding
+                            </li>
+                            <li class="flex items-center text-gray-700 text-lg">
+                                <svg class="w-6 h-6 text-secondary mr-3" fill="currentColor" viewBox="0 0 20 20">
+                                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                                </svg>
+                                Max 2 Guests
+                            </li>
+                        </ul>
+                        <a href="#booking" class="block text-center bg-accent hover:bg-accent/90 text-white py-4 rounded-lg text-lg font-bold transition-all hover:shadow-xl">
+                            Book Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Amenities Section -->
+    <section id="amenities" class="py-20 bg-primary/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4 font-display">Hotel Amenities</h2>
+                <p class="text-xl text-gray-600">Everything you need for a comfortable stay</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-4xl mb-3">🍴</div>
+                    <h3 class="text-xl font-bold text-primary mb-2">Restaurant & Bar</h3>
+                    <p class="text-gray-600">Riverside dining with Nepali & international cuisine</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-4xl mb-3">🅿️</div>
+                    <h3 class="text-xl font-bold text-primary mb-2">Free Parking</h3>
+                    <p class="text-gray-600">Secure parking available for all guests</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-4xl mb-3">📶</div>
+                    <h3 class="text-xl font-bold text-primary mb-2">Free WiFi</h3>
+                    <p class="text-gray-600">High-speed internet throughout the property</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-4xl mb-3">🚐</div>
+                    <h3 class="text-xl font-bold text-primary mb-2">Airport Pickup</h3>
+                    <p class="text-gray-600">Complimentary transport from Bharatpur Airport</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-4xl mb-3">🧳</div>
+                    <h3 class="text-xl font-bold text-primary mb-2">Safari Tours</h3>
+                    <p class="text-gray-600">Expert-guided jungle safaris & river cruises</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-4xl mb-3">🌅</div>
+                    <h3 class="text-xl font-bold text-primary mb-2">Sunset Viewing</h3>
+                    <p class="text-gray-600">Panoramic riverside terrace for stunning sunsets</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-4xl mb-3">🧺</div>
+                    <h3 class="text-xl font-bold text-primary mb-2">Laundry Service</h3>
+                    <p class="text-gray-600">Professional laundry & dry cleaning available</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-md">
+                    <div class="text-4xl mb-3">🔥</div>
+                    <h3 class="text-xl font-bold text-primary mb-2">Bonfire Evenings</h3>
+                    <p class="text-gray-600">Nightly bonfires with cultural performances</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4 font-display">Gallery</h2>
+                <p class="text-xl text-gray-600">Glimpses of your upcoming adventure</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+                <div class="col-span-2 row-span-2">
+                    <img src="images/rhino1.jpg"
+                         alt="One-horned Rhinoceros in Chitwan National Park"
+                         class="w-full h-full object-cover rounded-xl shadow-lg hover:shadow-2xl transition-shadow"
+                         loading="lazy">
+                </div>
+                <div>
+                    <img src="images/rhino2.jpg"
+                         alt="Golden sunset over Rapti River"
+                         class="w-full h-full object-cover rounded-xl shadow-lg hover:shadow-2xl transition-shadow"
+                         loading="lazy">
+                </div>
+                <div>
+                    <img src="images/birds1.jpg"
+                         alt="Colorful Terai bird species"
+                         class="w-full h-full object-cover rounded-xl shadow-lg hover:shadow-2xl transition-shadow"
+                         loading="lazy">
+                </div>
+                <div>
+                    <img src="images/birds2.jpg"
+                         alt="Greater One-horned Rhino"
+                         class="w-full h-full object-cover rounded-xl shadow-lg hover:shadow-2xl transition-shadow"
+                         loading="lazy">
+                </div>
+                <div>
+                    <img src="images/sunset.jpg"
+                         alt="Beautiful sunset views"
+                         class="w-full h-full object-cover rounded-xl shadow-lg hover:shadow-2xl transition-shadow"
+                         loading="lazy">
+                </div>
+                <div>
+                    <img src="images/sunset1.jpg"
+                         alt="Endemic bird species"
+                         class="w-full h-full object-cover rounded-xl shadow-lg hover:shadow-2xl transition-shadow"
+                         loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-primary/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4 font-display">Guest Experiences</h2>
+                <p class="text-xl text-gray-600">Stories from our wildlife adventures</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-500 text-xl">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"An unforgettable experience! We saw rhinos, elephants, and over 50 bird species. The guides were knowledgeable and the riverside location is stunning. Best hotel in Chitwan!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                            SJ
+                        </div>
+                        <div>
+                            <p class="font-bold text-primary">Sarah Johnson</p>
+                            <p class="text-sm text-gray-500">Wildlife Photographer, USA</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-500 text-xl">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"Perfect blend of adventure and comfort. The jungle safari was thrilling, and coming back to a comfortable room with river views was amazing. Staff were incredibly helpful!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                            RP
+                        </div>
+                        <div>
+                            <p class="font-bold text-primary">Rajesh Patel</p>
+                            <p class="text-sm text-gray-500">Nature Enthusiast, India</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <div class="flex items-center mb-4">
+                        <div class="text-yellow-500 text-xl">⭐⭐⭐⭐⭐</div>
+                    </div>
+                    <p class="text-gray-700 mb-6 italic">"Meghauli Safari exceeded all expectations. The food was delicious, rooms were spotless, and the sunset views from our balcony were breathtaking. Will definitely return!"</p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-secondary rounded-full flex items-center justify-center text-white font-bold text-lg mr-4">
+                            EM
+                        </div>
+                        <div>
+                            <p class="font-bold text-primary">Emma Martinez</p>
+                            <p class="text-sm text-gray-500">Travel Blogger, Spain</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Location Section -->
+    <section id="location" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4 font-display">Find Us</h2>
+                <p class="text-xl text-gray-600">Located in the heart of Chitwan, by the Rapti River</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-12 items-start">
+                <div>
+                    <h3 class="text-2xl font-bold text-primary mb-6">How to Reach</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="text-3xl mr-4">✈️</div>
+                            <div>
+                                <h4 class="font-bold text-lg text-primary mb-2">By Air</h4>
+                                <p class="text-gray-700">Fly to Bharatpur Airport (25 km away). We offer complimentary airport pickup - just let us know your arrival time when booking.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="text-3xl mr-4">🚌</div>
+                            <div>
+                                <h4 class="font-bold text-lg text-primary mb-2">By Bus</h4>
+                                <p class="text-gray-700">Regular tourist buses run from Kathmandu (5-6 hours) and Pokhara (4-5 hours) to Sauraha/Meghauli. We can arrange pickup from bus stops.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="text-3xl mr-4">🚗</div>
+                            <div>
+                                <h4 class="font-bold text-lg text-primary mb-2">By Car</h4>
+                                <p class="text-gray-700">Drive along the Narayanghat-Mugling Highway. Follow signs to Meghauli. Free parking available on-site.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 p-6 bg-primary/5 rounded-xl">
+                        <h4 class="font-bold text-lg text-primary mb-3">Address</h4>
+                        <p class="text-gray-700 mb-2">Hotel Meghauli Safari</p>
+                        <p class="text-gray-700 mb-2">Andrauli, Meghauli</p>
+                        <p class="text-gray-700 mb-4">Chitwan, Bagmati Province, Nepal</p>
+                        <p class="text-gray-700 mb-4 font-semibold">📞 +977-9855014882</p>
+                        <a href="https://maps.app.goo.gl/hw6cMBwQP77GPcir6"
+                           target="_blank"
+                           rel="noopener noreferrer"
+                           class="inline-flex items-center text-secondary hover:text-primary font-semibold transition-colors">
+                            <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                            </svg>
+                            Open in Google Maps
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <div class="bg-gray-200 rounded-xl overflow-hidden shadow-lg h-96">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3536.755339555674!2d84.1999362!3d27.5701026!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39945942d52d977d%3A0x96bac11b895ddd70!2sHotel%20Meghauli%20Safari!5e0!3m2!1sen!2snp!4v1761662746955!5m2!1sen!2snp"
+                            width="100%"
+                            height="100%"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-primary/5">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4 font-display">Frequently Asked Questions</h2>
+                <p class="text-xl text-gray-600">Everything you need to know before booking</p>
+            </div>
+
+            <div class="space-y-4">
+                <details class="bg-white rounded-xl shadow-md overflow-hidden group">
+                    <summary class="cursor-pointer p-6 font-bold text-lg text-primary hover:bg-primary/5 transition-colors">
+                        What is the best time to visit Chitwan National Park?
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-700">
+                        <p>The best time to visit is October to March when the weather is pleasant and wildlife sightings are most frequent. October-November offers lush greenery after monsoon, while February-March provides excellent visibility with shorter grass.</p>
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-xl shadow-md overflow-hidden group">
+                    <summary class="cursor-pointer p-6 font-bold text-lg text-primary hover:bg-primary/5 transition-colors">
+                        What activities are included in the stay?
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-700">
+                        <p>Complimentary breakfast is included with all rooms. Safari activities, jungle treks, bird watching tours, canoe rides, and cultural shows are available at additional cost. We can help arrange customized packages.</p>
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-xl shadow-md overflow-hidden group">
+                    <summary class="cursor-pointer p-6 font-bold text-lg text-primary hover:bg-primary/5 transition-colors">
+                        How far is the hotel from Bharatpur?
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-700">
+                        <p>We're located 25Kms away from Bharatpur Airport and about 4Kms away from Meghauli Airport.</p>
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-xl shadow-md overflow-hidden group">
+                    <summary class="cursor-pointer p-6 font-bold text-lg text-primary hover:bg-primary/5 transition-colors">
+                        What is your cancellation policy?
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-700">
+                        <p>Free cancellation up to 48 hours before check-in. Cancellations within 48 hours are subject to a one-night charge. We recommend travel insurance for flexibility.</p>
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-xl shadow-md overflow-hidden group">
+                    <summary class="cursor-pointer p-6 font-bold text-lg text-primary hover:bg-primary/5 transition-colors">
+                        Is WiFi available?
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-700">
+                        <p>Yes! Free high-speed WiFi is available throughout the hotel, including all rooms and common areas.</p>
+                    </div>
+                </details>
+
+                <details class="bg-white rounded-xl shadow-md overflow-hidden group">
+                    <summary class="cursor-pointer p-6 font-bold text-lg text-primary hover:bg-primary/5 transition-colors">
+                        Are children welcome?
+                    </summary>
+                    <div class="px-6 pb-6 text-gray-700">
+                        <p>Absolutely! We welcome families. Children under 6 stay free when sharing with parents. We can provide extra beds for older children at nominal charges. Safari activities are suitable for children aged 5+.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="py-20 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4 font-display">Reserve Your Stay</h2>
+                <p class="text-xl text-gray-600">Start your wildlife adventure today</p>
+            </div>
+
+            <form id="booking-form" class="bg-white rounded-2xl shadow-2xl p-8 md:p-12 border border-gray-100">
+                <!-- Honeypot for spam protection -->
+                <input type="text" name="website" id="website" style="display:none" tabindex="-1" autocomplete="off">
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="guest-name" class="block text-sm font-semibold text-gray-700 mb-2">Full Name *</label>
+                        <input type="text"
+                               id="guest-name"
+                               name="guest-name"
+                               required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition-all"
+                               placeholder="Enter your full name">
+                    </div>
+
+                    <div>
+                        <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email Address *</label>
+                        <input type="email"
+                               id="email"
+                               name="email"
+                               required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition-all"
+                               placeholder="your@email.com">
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Phone Number *</label>
+                    <input type="tel"
+                           id="phone"
+                           name="phone"
+                           required
+                           class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition-all"
+                           placeholder="+977-XXX-XXXXXXX">
+                </div>
+
+                <!-- Hidden field for room type since there's only one -->
+                <input type="hidden" id="room-type" name="room-type" value="AC Comfort Room">
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="check-in" class="block text-sm font-semibold text-gray-700 mb-2">Check-in Date *</label>
+                        <input type="text"
+                               id="check-in"
+                               name="check-in"
+                               required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition-all"
+                               placeholder="Select date">
+                    </div>
+
+                    <div>
+                        <label for="check-out" class="block text-sm font-semibold text-gray-700 mb-2">Check-out Date *</label>
+                        <input type="text"
+                               id="check-out"
+                               name="check-out"
+                               required
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition-all"
+                               placeholder="Select date">
+                    </div>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label for="guests" class="block text-sm font-semibold text-gray-700 mb-2">Number of Guests *</label>
+                        <select id="guests"
+                                name="guests"
+                                required
+                                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition-all">
+                            <option value="">Select number</option>
+                            <option value="1">1 Guest</option>
+                            <option value="2">2 Guests</option>
+                            <option value="3">3 Guests</option>
+                            <option value="4">4 Guests</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label for="arrival-time" class="block text-sm font-semibold text-gray-700 mb-2">Expected Arrival Time</label>
+                        <input type="text"
+                               id="arrival-time"
+                               name="arrival-time"
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition-all"
+                               placeholder="e.g., 2:00 PM">
+                    </div>
+                </div>
+
+                <div class="mb-6">
+                    <label for="special-requests" class="block text-sm font-semibold text-gray-700 mb-2">Special Requests / Notes</label>
+                    <textarea id="special-requests"
+                              name="special-requests"
+                              rows="4"
+                              class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition-all"
+                              placeholder="Any special requirements, dietary restrictions, or questions?"></textarea>
+                </div>
+
+                <div class="mb-6">
+                    <label class="flex items-start">
+                        <input type="checkbox"
+                               id="airport-pickup"
+                               name="airport-pickup"
+                               class="mt-1 mr-3 w-5 h-5 text-secondary border-gray-300 rounded focus:ring-secondary">
+                        <span class="text-sm text-gray-700">
+                            I would like complimentary airport pickup from Bharatpur Airport
+                        </span>
+                    </label>
+                </div>
+
+                <div class="mb-8">
+                    <p class="text-sm text-gray-600 bg-primary/5 p-4 rounded-lg">
+                        <strong>Important:</strong> Check-in: 2:00 PM | Check-out: 11:00 AM | Free cancellation up to 48 hours before arrival | This is a booking request - you'll receive confirmation within 24 hours
+                    </p>
+                </div>
+
+                <button type="submit"
+                        id="submit-btn"
+                        class="w-full bg-accent hover:bg-accent/90 text-white py-4 rounded-lg text-lg font-bold transition-all hover:shadow-xl flex items-center justify-center">
+                    <span id="btn-text">Submit Booking Request</span>
+                    <svg id="btn-spinner" class="hidden animate-spin ml-3 h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                        <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                        <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                </button>
+            </form>
+
+            <!-- Success Message (hidden by default) -->
+            <div id="success-message" class="hidden mt-8 bg-green-50 border border-green-200 rounded-xl p-8 text-center">
+                <div class="text-6xl mb-4">✅</div>
+                <h3 class="text-2xl font-bold text-green-800 mb-2">Booking Request Received!</h3>
+                <p class="text-green-700 mb-4">Thank you for choosing Hotel Meghauli Safari. We've received your booking request and will confirm availability within 24 hours.</p>
+                <p class="text-green-600">A confirmation email has been sent to your email address.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-primary/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4 font-display">Get In Touch</h2>
+                <p class="text-xl text-gray-600">We're here to help plan your perfect safari experience</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="text-4xl mb-4">📧</div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Email Us</h3>
+                    <a href="mailto:meghaulisafari@gmail.com" class="text-secondary hover:text-primary transition-colors font-semibold">
+                        meghaulisafari@gmail.com
+                    </a>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="text-4xl mb-4">📞</div>
+                    <h3 class="text-xl font-bold text-primary mb-3">Call Us</h3>
+                    <a href="tel:+9779855014882" class="text-gray-700 font-semibold hover:text-secondary transition-colors">+977-9855014882</a>
+                    <p class="text-sm text-gray-500 mt-2">Available 24/7</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-md text-center">
+                    <div class="text-4xl mb-4">💬</div>
+                    <h3 class="text-xl font-bold text-primary mb-3">WhatsApp</h3>
+                    <a href="https://wa.me/9779855014882" target="_blank" rel="noopener noreferrer" class="text-secondary hover:text-primary transition-colors font-semibold">
+                        Message on WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-gray-300 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-4 gap-8 mb-8">
+                <div>
+                    <div class="flex items-center space-x-2 mb-4">
+                        <span class="text-3xl">🦏</span>
+                        <h3 class="text-xl font-bold text-white">Meghauli Safari</h3>
+                    </div>
+                    <p class="text-gray-400 mb-4">Experience the wild beauty of Chitwan National Park from our riverside sanctuary.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="hover:text-secondary transition-colors">Home</a></li>
+                        <li><a href="#rooms" class="hover:text-secondary transition-colors">Rooms</a></li>
+                        <li><a href="#amenities" class="hover:text-secondary transition-colors">Amenities</a></li>
+                        <li><a href="#gallery" class="hover:text-secondary transition-colors">Gallery</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Information</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#location" class="hover:text-secondary transition-colors">Location</a></li>
+                        <li><a href="#contact" class="hover:text-secondary transition-colors">Contact</a></li>
+                        <li><a href="#booking" class="hover:text-secondary transition-colors">Book Now</a></li>
+                        <li><span class="text-gray-400">Check-in: 2:00 PM</span></li>
+                        <li><span class="text-gray-400">Check-out: 11:00 AM</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold mb-4">Connect With Us</h4>
+                    <p class="text-gray-400 mb-2">meghaulisafari@gmail.com</p>
+                    <p class="text-gray-400 mb-4">+977-9855014882</p>
+                    <p class="text-gray-400 text-sm">Andrauli, Meghauli<br>Chitwan, Nepal</p>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 pt-8 text-center text-sm text-gray-400">
+                <p>Hotel Meghauli Safari | Andrauli, Meghauli, Chitwan, Nepal</p>
+                <p>meghaulisafari@gmail.com | +977-9855014882</p>
+                <p>&copy; 2025 Hotel Meghauli Safari. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scroll-top"
+            class="hidden fixed bottom-8 right-8 bg-secondary hover:bg-primary text-white p-4 rounded-full shadow-2xl transition-all z-40"
+            aria-label="Scroll to top">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
+        </svg>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
