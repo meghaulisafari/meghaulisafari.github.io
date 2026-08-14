@@ -1432,6 +1432,45 @@ select[aria-invalid="true"] {
   max-width: none;
 }
 
+/* Build credit. Quiet enough not to compete with the hotel's own name,
+   with a terracotta-to-green underline that sweeps in on hover. */
+.credit {
+  margin-top: var(--sp-3);
+}
+
+.credit__link {
+  position: relative;
+  display: inline-block;
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  padding-bottom: 2px;
+}
+
+.credit__link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: linear-gradient(90deg, var(--accent-glow) 0%, #8fc9a5 100%);
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.credit__link:hover::after,
+.credit__link:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.credit__link:hover {
+  color: #9fd4b3;
+}
+
 /* Bottom breathing room so the floating button never covers footer links */
 body {
   padding-bottom: 0;
