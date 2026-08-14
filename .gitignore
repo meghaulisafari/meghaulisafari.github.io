@@ -2,3 +2,7 @@ BUILD_*
 __pycache__/
 node_modules/
 appscript.gs
+
+# Source data and contract — internal notes (_assumptions/_todos), not for publishing
+meghauli-safari.json
+hotel.schema.json

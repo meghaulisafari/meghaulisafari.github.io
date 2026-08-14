@@ -1,7 +1,7 @@
 # Hotel Meghauli Safari — Meghauli, Chitwan, Nepal
-# Replace __SITE_URL__ below once a domain is registered.
+# Served from meghaulisafari.com (GitHub Pages, custom domain via CNAME).
 
 User-agent: *
 Allow: /
 
-Sitemap: __SITE_URL__/sitemap.xml
+Sitemap: https://meghaulisafari.com/sitemap.xml
