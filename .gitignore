@@ -1,0 +1,4 @@
+BUILD_*
+__pycache__/
+node_modules/
+appscript.gs

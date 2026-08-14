@@ -1,0 +1,265 @@
+{
+    "schema_version": "1.0.0",
+    "_assumptions": [
+        {
+            "field": "policies.check_in_time",
+            "value": "2:00 PM",
+            "basis": "Owner gave only checkout (noon). 2 PM is the near-universal default for Nepal hotels and safe to correct later."
+        },
+        {
+            "field": "booking.level",
+            "value": "booking_request",
+            "basis": "Owner ticked 'pay full amount online' but also 'booking requests are fine, no live availability'. The two conflict; online payment needs a gateway with weeks of onboarding. Building request-based and treating online payment as a later phase."
+        },
+        {
+            "field": "pricing.tax_note",
+            "value": "+ applicable VAT and service charge",
+            "basis": "Owner confirmed tax is added but gave no percentages. Kept generic rather than inventing 13%+10%; swap in exact figures once known."
+        },
+        {
+            "field": "rooms[0].cooling",
+            "value": "AC",
+            "basis": "Owner wrote 'AC' once at the end of a combined line. Applied AC to the two rooms whose names imply it and None to the explicitly Non-AC room."
+        },
+        {
+            "field": "rooms.hot_water",
+            "value": "24 hours",
+            "basis": "Owner wrote '24 hour hot water' once for the whole line; applied to all rooms as the most likely reading."
+        },
+        {
+            "field": "activities[0].extras_note",
+            "value": "National park entry permit and licensed guide arranged separately",
+            "basis": "Rs 3000 for a Chitwan National Park safari almost never includes the ~Rs 2000 park permit and mandatory guide. Stated as separate to avoid a checkout dispute; verify and adjust."
+        },
+        {
+            "field": "activities.operated_by",
+            "value": "arranged",
+            "basis": "Unknown whether safaris/boat are run in-house or via park-authorised operators. National park safaris legally require authorised guides, so copy uses 'we arrange', which is true either way."
+        },
+        {
+            "field": "location.geo",
+            "value": "Meghauli approx 27.577, 84.228",
+            "basis": "Approx centre of Meghauli near the park's western sector. Replace with the exact pin once the owner shares a Maps link."
+        },
+        {
+            "field": "brand.feel",
+            "value": "earthy and natural",
+            "basis": "No preference given. Earthy/natural suits a jungle-safari property and its likely imagery."
+        }
+    ],
+    "_todos": [
+        "Exact VAT and service charge percentages.",
+        "Confirm the three room types are distinct rooms vs one flexible room; confirm which have AC.",
+        "Confirm whether the Rs 3000 national park safari price includes permit and guide.",
+        "Exact Google Maps pin.",
+        "Google / TripAdvisor rating, review count, and 3-4 quotable reviews.",
+        "Register one domain — neither candidate is owned yet.",
+        "Package deals — none provided; a room+safari+meals bundle would lift booking value if the owner wants one.",
+        "Logo is image-only; a clean version is needed, or the wordmark is set in type."
+    ],
+    "website_theme": {
+        "description": "should give vibe of jungle safari, calm and peaceful"
+    },
+    "hotel": {
+        "name": "Hotel Meghauli Safari",
+        "type": "Hotel",
+        "pitch": {
+            "raw": "स्वदेशि तथा बिदेशी पाहुना, छिमेकी होटलहरू भन्दा निकै नै सस्तो र गुणस्तरीय छ",
+            "target_guests": [
+                "Domestic travellers",
+                "Foreign tourists visiting Chitwan National Park"
+            ],
+            "differentiators": [
+                "Better value than nearby hotels",
+                "Quality at a lower price"
+            ]
+        }
+    },
+    "location": {
+        "locality": "Meghauli",
+        "region": "Chitwan",
+        "country": "Nepal",
+        "geo": {
+            "lat": 27.577,
+            "lng": 84.228
+        },
+        "landmarks": [
+            {
+                "name": "Chitwan National Park (western entrance)",
+                "travel_time": "nearby",
+                "mode": "walking/drive"
+            },
+            {
+                "name": "Bharatpur Airport",
+                "travel_time": "TODO",
+                "mode": "drive"
+            }
+        ],
+        "nearby_attractions": [
+            {
+                "name": "Chitwan National Park",
+                "note": "Jungle safari, wildlife"
+            },
+            {
+                "name": "Rapti / Narayani riverside",
+                "note": "Boat rides, birdlife"
+            }
+        ],
+        "seasonality": "TODO — typically Oct–Mar best for safari; monsoon Jun–Aug affects access."
+    },
+    "rooms": [
+        {
+            "name": "Deluxe Room (Double / Triple / Family)",
+            "count": 6,
+            "price": 4000,
+            "currency": "NPR",
+            "occupancy": "2-4 guests",
+            "breakfast_included": true,
+            "cooling": "AC",
+            "hot_water": "24 hours",
+            "amenities": [
+                "Private bathroom",
+                "24-hour hot water",
+                "Breakfast included"
+            ],
+            "raw": "डिलक्स डबल/ ट्रिपल/ फ्यामिली रूम — ६ वटा — रु. ४००० — ब्रेकफास्ट समाबेस — एसी — २४ घण्टा तातो पानी"
+        },
+        {
+            "name": "Standard AC Room",
+            "count": null,
+            "price": 2500,
+            "currency": "NPR",
+            "occupancy": "2 guests",
+            "breakfast_included": true,
+            "cooling": "AC",
+            "hot_water": "24 hours",
+            "amenities": [
+                "Air conditioning",
+                "Private bathroom",
+                "24-hour hot water",
+                "Breakfast included"
+            ],
+            "raw": "नर्मल एसी रूम - रू २५००"
+        },
+        {
+            "name": "Non-AC Room",
+            "count": null,
+            "price": 1500,
+            "currency": "NPR",
+            "occupancy": "2 guests",
+            "breakfast_included": true,
+            "cooling": "Fan",
+            "hot_water": "24 hours",
+            "amenities": [
+                "Fan",
+                "Private bathroom",
+                "24-hour hot water",
+                "Breakfast included"
+            ],
+            "raw": "नन् एसी रूम - १५००"
+        }
+    ],
+    "activities": [
+        {
+            "name": "Jungle Safari — Chitwan National Park",
+            "duration": "Half day",
+            "price_per_person": 3000,
+            "currency": "NPR",
+            "operated_by": "unknown",
+            "extras_note": "National park entry permit and licensed guide arranged separately unless confirmed otherwise.",
+            "raw": "जंगल सफारी (चितवन नेशनल पार्क) — आधा दिन — रु. ३००० प्रतिव्यक्ति"
+        },
+        {
+            "name": "Jungle Safari — Community Forest",
+            "duration": null,
+            "price_per_person": 900,
+            "currency": "NPR",
+            "operated_by": "unknown",
+            "raw": "जंगल सफारी (सामुदयीक बन) — रु. ९०० प्रतिव्यक्ति"
+        },
+        {
+            "name": "Boat Ride",
+            "duration": "1 hour",
+            "price_per_person": 1000,
+            "currency": "NPR",
+            "operated_by": "unknown",
+            "raw": "डुङ्गा सयर — १ घण्टा — रु. १००० प्रतिव्यक्ति"
+        }
+    ],
+    "packages": [],
+    "policies": {
+        "check_in_time": "2:00 PM",
+        "check_out_time": "12:00 noon",
+        "cancellation": {
+            "raw": "आउनुभन्दा ४८ घण्टा अगाडिसम्म निःशुल्क रद्द गर्न सकिन्छ। | Free cancellation up to 48 hours before arrival."
+        },
+        "advance_payment": "TODO — owner indicated online full payment; treated as pay-on-arrival for the request pipeline."
+    },
+    "pricing": {
+        "display_currency": "NPR",
+        "tax_included": false,
+        "tax_note": "+ applicable VAT and service charge",
+        "foreign_guest_pricing": "same",
+        "seasonal": "none",
+        "display_mode": "exact"
+    },
+    "booking": {
+        "level": "booking_request",
+        "pay_online": false,
+        "live_availability": false,
+        "who_handles": "Reception, any time",
+        "response_time_promise": "We usually reply within a few hours.",
+        "notification_channels": [
+            "Email",
+            "WhatsApp"
+        ],
+        "reference_prefix": "HMS"
+    },
+    "contact": {
+        "phones": [
+            "+9779855014822",
+            "+9779766848382"
+        ],
+        "whatsapp": "9779855014822",
+        "email": "meghaulisafari@gmail.com",
+        "reception_hours": "24 hours"
+    },
+    "reviews": {
+        "rating": null,
+        "count": null,
+        "source": "TODO — pull from Google / TripAdvisor",
+        "quotes": []
+    },
+    "brand": {
+        "logo_status": "image_file",
+        "feel": "earthy and natural",
+        "imagery_avoid": ""
+    },
+    "site": {
+        "languages": [
+            "English",
+            "Nepali"
+        ],
+        "primary_language": "English",
+        "domain_owned": false,
+        "domain_candidates": [
+            "hotelmeghaulisafari.com",
+            "meghaulisafari.com"
+        ],
+        "approver": {
+            "name": "TODO",
+            "phone": ""
+        },
+        "seo_phrases": [
+            "hotel near Chitwan National Park",
+            "Meghauli safari hotel",
+            "jungle safari lodge Chitwan",
+            "budget hotel Chitwan safari",
+            "Chitwan national park accommodation"
+        ]
+    },
+    "media": {
+        "photos_available": "Supplied separately",
+        "manifest_path": "images/README.md"
+    }
+}

@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Request a Booking — Hotel Meghauli Safari, Chitwan</title>
+<meta name="description" content="Send a booking request to Hotel Meghauli Safari in Meghauli, Chitwan. No payment is taken online — reception confirms availability and usually replies within a few hours.">
+<link rel="canonical" href="__SITE_URL__/book.html">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Hotel Meghauli Safari">
+<meta property="og:title" content="Request a Booking — Hotel Meghauli Safari">
+<meta property="og:description" content="Send your dates and we will confirm availability. No payment is taken online.">
+<meta property="og:url" content="__SITE_URL__/book.html">
+<meta property="og:image" content="__SITE_URL__/images/og-cover.jpg">
+<meta property="og:locale" content="en">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Request a Booking — Hotel Meghauli Safari">
+<meta name="twitter:description" content="Send your dates and we will confirm availability. No payment is taken online.">
+<meta name="twitter:image" content="__SITE_URL__/images/og-cover.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Inter:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body data-wa-context="I would like to make a booking request.">
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<header class="site-header">
+  <div class="wrap site-header__inner">
+    <a class="wordmark" href="index.html">
+      Hotel Meghauli Safari
+      <span>Meghauli · Chitwan</span>
+    </a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+      <span class="nav-toggle__bars" aria-hidden="true"></span>
+      Menu
+    </button>
+
+    <nav class="site-nav" id="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="rooms.html">Rooms</a></li>
+        <li><a href="experiences.html">Experiences</a></li>
+        <li><a href="location.html">Location</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li class="nav-cta"><a href="book.html" aria-current="page">Book</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Booking</p>
+      <h1>Request a booking</h1>
+      <p>
+        This sends your dates to reception. It is a request, not a confirmed
+        reservation, and <strong>no payment is taken on this website</strong>.
+        We will reply to confirm what is available — usually within a few hours.
+      </p>
+      <p class="todo">
+        [TODO: confirm advance payment terms. Requests are treated as
+        pay-on-arrival until the owner confirms otherwise.]
+      </p>
+    </div>
+  </section>
+
+  <section class="section section--sand">
+    <div class="wrap">
+
+      <!-- Success state, revealed once the request is accepted -->
+      <div id="confirmation-panel" class="confirmation" hidden>
+        <h2>Thank you — your request is with us</h2>
+        <p>Please keep this reference for any follow-up:</p>
+        <p class="confirmation__ref" id="confirmation-reference">—</p>
+        <p>
+          We usually reply within a few hours. Nothing has been charged and no
+          room is held until we confirm it with you.
+        </p>
+        <div class="btn-row">
+          <a class="btn btn--whatsapp" id="confirmation-whatsapp"
+             href="https://wa.me/9779855014822" target="_blank" rel="noopener">
+            Continue on WhatsApp
+          </a>
+          <a class="btn btn--secondary" href="index.html">Back to the homepage</a>
+        </div>
+        <p>
+          Or reach us directly on
+          <a href="tel:+9779855014822">+977 9855014822</a> ·
+          <a href="mailto:meghaulisafari@gmail.com">meghaulisafari@gmail.com</a>
+        </p>
+      </div>
+
+      <div id="form-panel">
+        <div class="grid grid--2-1">
+
+          <div>
+            <!-- Failure state: the guest is never left with nothing -->
+            <div class="alert alert--error" id="form-error" hidden>
+              <h2 style="font-size:1.125rem">We could not send that automatically</h2>
+              <p>
+                Nothing is lost. Send the same details straight to reception on
+                WhatsApp — the message is already written for you:
+              </p>
+              <p>
+                <a class="btn btn--whatsapp" id="wa-fallback-link"
+                   href="https://wa.me/9779855014822" target="_blank" rel="noopener">
+                  Send it on WhatsApp
+                </a>
+              </p>
+              <p>
+                Or contact us directly:<br>
+                Phone: +977 9855014822 · +977 9766848382<br>
+                Email: meghaulisafari@gmail.com
+              </p>
+            </div>
+
+            <form id="booking-form" novalidate>
+
+              <fieldset>
+                <legend>Your stay</legend>
+
+                <div class="form-grid form-grid--2">
+                  <div>
+                    <label for="check-in">Check-in date</label>
+                    <input type="date" id="check-in" name="check_in" required>
+                  </div>
+                  <div>
+                    <label for="check-out">Check-out date</label>
+                    <input type="date" id="check-out" name="check_out" required
+                           aria-describedby="check-out-error">
+                    <span class="field-error" id="check-out-error" role="alert"></span>
+                  </div>
+                </div>
+
+                <div class="form-grid form-grid--2">
+                  <div>
+                    <label for="room-type">Room type</label>
+                    <select id="room-type" name="room_type" required>
+                      <option value="">Choose a room…</option>
+                      <option value="Deluxe Room (Double / Triple / Family)">Deluxe Room (Double / Triple / Family) — NPR 4,000</option>
+                      <option value="Standard AC Room">Standard AC Room — NPR 2,500</option>
+                      <option value="Non-AC Room">Non-AC Room — NPR 1,500</option>
+                      <option value="Not sure — please suggest">Not sure — please suggest</option>
+                    </select>
+                    <span class="field-hint">All rates + applicable VAT and service charge.</span>
+                  </div>
+                  <div>
+                    <label for="room-count">Number of rooms</label>
+                    <input type="number" id="room-count" name="room_count"
+                           min="1" max="10" value="1" inputmode="numeric" required>
+                  </div>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Guests</legend>
+
+                <div class="form-grid form-grid--2">
+                  <div>
+                    <label for="adults">Adults</label>
+                    <input type="number" id="adults" name="adults"
+                           min="1" max="20" value="2" inputmode="numeric" required>
+                  </div>
+                  <div>
+                    <label for="children">Children</label>
+                    <input type="number" id="children" name="children"
+                           min="0" max="6" value="0" inputmode="numeric"
+                           aria-describedby="children-hint">
+                    <span class="field-hint" id="children-hint">Tell us their ages and we can advise on beds.</span>
+                  </div>
+                </div>
+
+                <div class="form-grid form-grid--2" id="child-ages" hidden></div>
+
+                <fieldset style="border:0;padding:0;margin:0;background:none">
+                  <legend style="font-family:inherit;font-size:0.875rem;font-weight:600;padding:0">
+                    Guest nationality
+                  </legend>
+                  <p class="field-hint" style="margin:0 0 0.5rem">
+                    We charge Nepali and foreign guests the same rate. This just
+                    helps us prepare your paperwork.
+                  </p>
+                  <div class="radio-row">
+                    <label>
+                      <input type="radio" name="nationality" value="Nepali" required>
+                      Nepali
+                    </label>
+                    <label>
+                      <input type="radio" name="nationality" value="Foreign">
+                      Foreign
+                    </label>
+                  </div>
+                </fieldset>
+              </fieldset>
+
+              <fieldset>
+                <legend>Anything you would like us to arrange?</legend>
+                <p class="field-hint" style="margin-bottom:1rem">
+                  Optional. We arrange these through local operators — tick
+                  anything you are interested in and we will include prices in
+                  our reply.
+                </p>
+
+                <ul class="checkbox-list">
+                  <li>
+                    <label>
+                      <input type="checkbox" name="activities" value="Jungle Safari — Chitwan National Park">
+                      <span>
+                        Jungle Safari — Chitwan National Park
+                        <span class="field-hint">
+                          Half day · NPR 3,000 per person + applicable VAT and
+                          service charge. National park entry permit and licensed
+                          guide arranged separately unless confirmed otherwise.
+                        </span>
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input type="checkbox" name="activities" value="Jungle Safari — Community Forest">
+                      <span>
+                        Jungle Safari — Community Forest
+                        <span class="field-hint">
+                          NPR 900 per person + applicable VAT and service charge.
+                        </span>
+                      </span>
+                    </label>
+                  </li>
+                  <li>
+                    <label>
+                      <input type="checkbox" name="activities" value="Boat Ride">
+                      <span>
+                        Boat Ride
+                        <span class="field-hint">
+                          1 hour · NPR 1,000 per person + applicable VAT and
+                          service charge.
+                        </span>
+                      </span>
+                    </label>
+                  </li>
+                </ul>
+              </fieldset>
+
+              <fieldset>
+                <legend>How we reach you</legend>
+
+                <div class="form-grid form-grid--2">
+                  <div>
+                    <label for="guest-name">Your name</label>
+                    <input type="text" id="guest-name" name="name"
+                           autocomplete="name" required>
+                  </div>
+                  <div>
+                    <label for="phone">Phone or WhatsApp number</label>
+                    <input type="tel" id="phone" name="phone"
+                           autocomplete="tel" required
+                           aria-describedby="phone-hint">
+                    <span class="field-hint" id="phone-hint">Include your country code.</span>
+                  </div>
+                </div>
+
+                <div>
+                  <label for="email">Email address</label>
+                  <input type="email" id="email" name="email"
+                         autocomplete="email" required>
+                </div>
+
+                <div style="margin-top:1rem">
+                  <label for="message">Anything else we should know?</label>
+                  <textarea id="message" name="message"
+                            aria-describedby="message-hint"></textarea>
+                  <span class="field-hint" id="message-hint">
+                    Arrival time, food preferences, travelling with elderly
+                    relatives — anything that helps us prepare.
+                  </span>
+                </div>
+
+                <!-- Honeypot. Never shown to a guest; a filled value means a bot. -->
+                <div class="hp-field" aria-hidden="true">
+                  <label for="company">Company</label>
+                  <input type="text" id="company" name="company"
+                         tabindex="-1" autocomplete="off">
+                </div>
+              </fieldset>
+
+              <div class="cf-turnstile" data-sitekey="0x4AAAAAAEPctMuTBkKkp6VT" data-theme="light"></div>
+
+              <div class="btn-row" style="margin-top:1.5rem">
+                <button class="btn btn--primary" type="submit" id="submit-button">
+                  Send booking request
+                </button>
+                <button class="btn btn--whatsapp" type="button" id="whatsapp-instead">
+                  Send on WhatsApp instead
+                </button>
+              </div>
+
+              <p class="field-hint">
+                By sending this you are asking us to hold these dates. Nothing is
+                charged, and the request is not confirmed until we reply.
+              </p>
+            </form>
+          </div>
+
+          <div>
+            <aside class="estimate estimate--sticky" aria-labelledby="estimate-heading">
+              <h2 id="estimate-heading" style="font-size:1.375rem">Your estimate</h2>
+
+              <p class="estimate__row" style="justify-content:flex-start">
+                <span>Length of stay:&nbsp;</span>
+                <strong id="nights-value">—</strong>
+              </p>
+
+              <div id="estimate-detail" hidden>
+                <div class="estimate__row">
+                  <span>Room</span>
+                  <span id="estimate-room">—</span>
+                </div>
+                <div class="estimate__row">
+                  <span>Nights</span>
+                  <span id="estimate-nights">—</span>
+                </div>
+                <div class="estimate__row">
+                  <span>Rooms</span>
+                  <span id="estimate-rooms">—</span>
+                </div>
+                <div class="estimate__row estimate__row--total">
+                  <span>Estimated total</span>
+                  <span class="estimate__total" id="estimate-total">—</span>
+                </div>
+                <p class="estimate__disclaimer">
+                  <strong>+ applicable VAT and service charge.</strong>
+                  This is an estimate to be confirmed by reception, not a charge.
+                  Nothing is taken from you on this website. The same rate applies
+                  to Nepali and foreign guests.
+                </p>
+              </div>
+
+              <div id="estimate-unknown">
+                <p class="estimate__disclaimer">
+                  Choose your dates and a room type and an estimate will appear
+                  here. If you are not sure which room suits you, send the request
+                  anyway — we will suggest one and quote it in our reply.
+                </p>
+              </div>
+
+              <hr>
+
+              <p class="estimate__disclaimer">
+                Check-in 2:00 PM · Check-out 12:00 noon<br>
+                Free cancellation up to 48 hours before arrival<br>
+                Reception answers 24 hours
+              </p>
+            </aside>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+
+      <div>
+        <h2>Hotel Meghauli Safari</h2>
+        <p>
+          Meghauli, Chitwan, Nepal — beside the western entrance of Chitwan
+          National Park.
+        </p>
+      </div>
+
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="tel:+9779855014822">+977 9855014822</a></li>
+          <li><a href="tel:+9779766848382">+977 9766848382</a></li>
+          <li><a href="mailto:meghaulisafari@gmail.com">meghaulisafari@gmail.com</a></li>
+          <li>Reception: 24 hours</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3>Visit</h3>
+        <ul>
+          <li><a href="rooms.html">Rooms &amp; rates</a></li>
+          <li><a href="experiences.html">Experiences</a></li>
+          <li><a href="location.html">Location</a></li>
+          <li><a href="gallery.html">Gallery</a></li>
+          <li><a href="book.html">Request a booking</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>Check-in 2:00 PM · Check-out 12:00 noon · Free cancellation up to 48 hours before arrival.</p>
+      <p>All rates are quoted + applicable VAT and service charge.</p>
+      <p>&copy; <span id="current-year">2026</span> Hotel Meghauli Safari.</p>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/9779855014822" aria-label="Chat with Hotel Meghauli Safari on WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+    <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.25-1.38a9.86 9.86 0 0 0 4.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91S17.5 2 12.04 2Zm0 18.15h-.01a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.19 8.19 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.19 8.19 0 0 1 2.41 5.83c0 4.54-3.7 8.23-8.24 8.23Zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.24-.64.8-.79.97-.14.16-.29.18-.54.06-.25-.13-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.13-.15.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.43h-.47c-.17 0-.43.06-.66.31-.22.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.14-1.18-.06-.11-.22-.17-.47-.29Z"/>
+  </svg>
+  <span class="wa-float__label">WhatsApp</span>
+</a>
+
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<script src="js/main.js" defer></script>
+</body>
+</html>
