@@ -24,7 +24,7 @@
     var EMAIL = "meghaulisafari@gmail.com";
 
     // pricing.tax_included = false, so this rides alongside every price
-    var TAX_NOTE = "+ applicable VAT and service charge";
+    var TAX_NOTE = "+ 13% VAT and 10% service charge";
 
     // pricing.display_currency
     var CURRENCY = "NPR";
@@ -63,6 +63,34 @@
     function pad(number) {
         return number < 10 ? "0" + number : String(number);
     }
+
+    /* ------------------------------------------------------------------------
+       Turnstile messaging
+
+       The submit button is deliberately NOT disabled while the check is
+       incomplete. A disabled button gives no reason for being disabled, and
+       screen readers skip it entirely — the guest is left guessing. A clear
+       message on submit tells them exactly what to do.
+
+       These live on window because the Turnstile script calls them by name
+       from its own scope, and they are defined at load time so they exist
+       before the widget finishes rendering.
+       ------------------------------------------------------------------------ */
+
+    function setTurnstileMessage(text) {
+        var target = document.getElementById("turnstile-error");
+        if (target) target.textContent = text || "";
+    }
+
+    window.hmsTurnstileDone = function () {
+        setTurnstileMessage("");
+    };
+
+    window.hmsTurnstileExpired = function () {
+        setTurnstileMessage(
+            "The security check expired — please complete it again."
+        );
+    };
 
     /* ------------------------------------------------------------------------
        WhatsApp helper — builds https://wa.me/<number>?text=<encoded>
@@ -541,10 +569,21 @@
                 return;
             }
 
+            // Not a failure — the guest simply has not completed the check yet.
+            // Showing the generic "could not send" box here would be a lie, so
+            // point them at the widget instead.
             if (turnstileActive() && !turnstileToken()) {
-                errorBox.hidden = false;
+                setTurnstileMessage(
+                    "Please complete the security check below before sending."
+                );
+                var widget = form.querySelector(".cf-turnstile");
+                if (widget) {
+                    widget.scrollIntoView({ block: "center", behavior: "smooth" });
+                }
                 return;
             }
+
+            setTurnstileMessage("");
 
             var payload = collect();
             payload.reference = reference();

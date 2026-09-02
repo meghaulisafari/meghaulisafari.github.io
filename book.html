@@ -66,9 +66,8 @@
         reservation, and <strong>no payment is taken on this website</strong>.
         We will reply to confirm what is available — usually within a few hours.
       </p>
-      <p class="todo">
-        [TODO: confirm advance payment terms. Requests are treated as
-        pay-on-arrival until the owner confirms otherwise.]
+      <p>
+        No advance payment is taken online. Your stay is paid for on arrival.
       </p>
     </div>
   </section>
@@ -151,7 +150,7 @@
                       <option value="Non-AC Room">Non-AC Room — NPR 1,500</option>
                       <option value="Not sure — please suggest">Not sure — please suggest</option>
                     </select>
-                    <span class="field-hint">All rates + applicable VAT and service charge.</span>
+                    <span class="field-hint">All rates + 13% VAT and 10% service charge.</span>
                   </div>
                   <div>
                     <label for="room-count">Number of rooms</label>
@@ -217,7 +216,7 @@
                       <span>
                         Jungle Safari — Chitwan National Park
                         <span class="field-hint">
-                          Half day · NPR 3,000 per person + applicable VAT and
+                          Half day · NPR 3,000 per person + 13% VAT and 10%
                           service charge. National park entry permit and licensed
                           guide arranged separately unless confirmed otherwise.
                         </span>
@@ -230,7 +229,7 @@
                       <span>
                         Jungle Safari — Community Forest
                         <span class="field-hint">
-                          NPR 900 per person + applicable VAT and service charge.
+                          NPR 900 per person + 13% VAT and 10% service charge.
                         </span>
                       </span>
                     </label>
@@ -241,7 +240,7 @@
                       <span>
                         Boat Ride
                         <span class="field-hint">
-                          1 hour · NPR 1,000 per person + applicable VAT and
+                          1 hour · NPR 1,000 per person + 13% VAT and 10%
                           service charge.
                         </span>
                       </span>
@@ -292,7 +291,15 @@
                 </div>
               </fieldset>
 
-              <div class="cf-turnstile" data-sitekey="0x4AAAAAAEPctMuTBkKkp6VT" data-theme="light"></div>
+              <div class="turnstile-block">
+                <div class="cf-turnstile"
+                     data-sitekey="0x4AAAAAAEPctMuTBkKkp6VT"
+                     data-theme="light"
+                     data-callback="hmsTurnstileDone"
+                     data-expired-callback="hmsTurnstileExpired"
+                     data-error-callback="hmsTurnstileExpired"></div>
+                <span class="field-error" id="turnstile-error" role="alert"></span>
+              </div>
 
               <div class="btn-row" style="margin-top:1.5rem">
                 <button class="btn btn--primary" type="submit" id="submit-button">
@@ -337,7 +344,7 @@
                   <span class="estimate__total" id="estimate-total">—</span>
                 </div>
                 <p class="estimate__disclaimer">
-                  <strong>+ applicable VAT and service charge.</strong>
+                  <strong>+ 13% VAT and 10% service charge.</strong>
                   This is an estimate to be confirmed by reception, not a charge.
                   Nothing is taken from you on this website. The same rate applies
                   to Nepali and foreign guests.
@@ -407,7 +414,7 @@
 
     <div class="footer-bottom">
       <p>Check-in 2:00 PM · Check-out 12:00 noon · Free cancellation up to 48 hours before arrival.</p>
-      <p>All rates are quoted + applicable VAT and service charge.</p>
+      <p>All rates are quoted + 13% VAT and 10% service charge.</p>
       <p class="credit">&copy; <span id="current-year">2026</span> Hotel Meghauli Safari · Handcrafted by <a class="credit__link" href="https://bewakes.com" target="_blank" rel="noopener">bewakes</a></p>
     </div>
   </div>

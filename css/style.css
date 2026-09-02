@@ -1237,6 +1237,22 @@ select[aria-invalid="true"] {
   display: none;
 }
 
+/* Turnstile widget plus its own message line, so "you haven't ticked this"
+   appears next to the thing that needs ticking rather than in the generic
+   send-failure box. */
+.turnstile-block {
+  margin-top: var(--sp-5);
+}
+
+.turnstile-block .field-error {
+  margin-top: var(--sp-3);
+  padding: var(--sp-3) var(--sp-4);
+  background: #fdeee7;
+  border: 1px solid #e0a98f;
+  border-radius: var(--radius);
+  max-width: var(--measure);
+}
+
 /* Live estimate panel */
 .estimate {
   background: var(--brand-tint);
